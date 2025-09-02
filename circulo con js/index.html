@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="centro" id="caja">
+        <label class="label" for="radio">Dibujar circulo</label>
+        <br>
+        <input type="number" id="radio" placeholder="Incerte el Radio">
+        <button onclick="dibujarCirculo()">Dibujar</button>
+        <div id="circulo"></div>
+
+    </div>
+
+    <script>
+        function dibujarCirculo(){
+            const radio = document.getElementById("radio").value;
+            const circulo= document.getElementById("circulo")
+            const cuadrado= document.getElementById("caja")
+
+            const diametro= radio*2;
+
+            circulo.style.width =diametro+"px";
+            circulo.style.height =diametro+"px";
+
+        }
+
+        dibujarCirculo();
+    </script>
+
+</body>
+</html>
