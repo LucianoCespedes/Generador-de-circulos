@@ -10,28 +10,34 @@
     <div class="centro" id="caja">
         <label class="label" for="radio">Dibujar circulo</label>
         <br>
-        <input onclick="dibujarCirculo()" type="range" id="radio" placeholder="Incerte el Radio">
+        <input onclick="dibujarCirculo()" value="0" min="0" max="300" type="range" id="radio" placeholder="Incerte el Radio">
         <div id="circulo"></div>
+        <span id="valorRadio"></span>
 
     </div>
 
-    <script>
-        function dibujarCirculo(){
-            const radio = document.getElementById("radio").value;
-            const circulo= document.getElementById("circulo")
-            const cuadrado= document.getElementById("caja")
+<script>
+  const slider = document.getElementById("radio");
+  const circulo = document.getElementById("circulo");
+  const valorRadio = document.getElementById("valorRadio");
 
-            const diametro= radio*2;
+  slider.addEventListener("input", function() {
+    const radio = parseInt(slider.value);
+    const diametro = radio * 2;
 
-            circulo.style.width =diametro+"px";
-            circulo.style.height =diametro+"px";
+    circulo.style.width = diametro + "px";
+    circulo.style.height = diametro + "px";
 
-        }
+    valorRadio.textContent = radio; // Muestra el valor actual al lado
+  });
 
-        dibujarCirculo();
-    </script>
+  // Dibujar inicial
+  slider.dispatchEvent(new Event("input"));
+</script>
 
 </body>
+</html>
 
 </html>
+
 
