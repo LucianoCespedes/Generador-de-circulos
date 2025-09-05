@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="centro" id="caja">
-        <label class="label" for="radio">Dibujar circulo</label>
+        <div id="circulo"></div>
+        <span id="valorRadio">Radio: 0 , Diametro: 0 , Perimetro: 0</span>
         <br>
         <input onclick="dibujarCirculo()" value="0" min="0" max="300" type="range" id="radio" placeholder="Incerte el Radio">
-        <div id="circulo"></div>
-        <span id="valorRadio"></span>
+
 
     </div>
 
@@ -28,16 +28,9 @@
     circulo.style.width = diametro + "px";
     circulo.style.height = diametro + "px";
 
-    valorRadio.textContent = radio; // Muestra el valor actual al lado
+    valorRadio.textContent = `Radio: ${radio}, Diametro: ${diametro},Perimetro: ${2*3.14*radio}`;
   });
 
-  // Dibujar inicial
   slider.dispatchEvent(new Event("input"));
-</script>
-
-</body>
-</html>
-
-</html>
 
 
